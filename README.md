@@ -1,5 +1,9 @@
 # The Hibernate OGM + Infinity tutorial running on Spring Boot
 
+What I used to build this project
+ * JDK 8
+ * Maven 3.3.9
+
 Build with
 
 ```
