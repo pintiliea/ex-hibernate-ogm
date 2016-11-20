@@ -1,8 +1,6 @@
 #!/bin/sh
 cd $(dirname $0)
 
-cd ../complete
-
 mvn clean package
 ret=$?
 if [ $ret -ne 0 ]; then
@@ -10,14 +8,12 @@ exit $ret
 fi
 rm -rf target
 
-./gradlew build
-ret=$?
-if [ $ret -ne 0 ]; then
-exit $ret
-fi
-rm -rf build
-
-cd ../initial
+# ./gradlew build
+# ret=$?
+# if [ $ret -ne 0 ]; then
+# exit $ret
+# fi
+# rm -rf build
 
 mvn clean compile
 ret=$?
@@ -26,11 +22,11 @@ exit $ret
 fi
 rm -rf target
 
-./gradlew compileJava
-ret=$?
-if [ $ret -ne 0 ]; then
-exit $ret
-fi
-rm -rf build
+# ./gradlew compileJava
+# ret=$?
+# if [ $ret -ne 0 ]; then
+# exit $ret
+# fi
+# rm -rf build
 
 exit
