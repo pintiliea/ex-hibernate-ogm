@@ -1,47 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>tu.hiber</groupId>
-    <artifactId>tut-hiber-ogm</artifactId>
-    <version>0.1.0</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <!-- <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.2.RELEASE</version>
-    </parent> -->
+	<modelVersion>4.0.0</modelVersion>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+	<groupId>tu.hiber</groupId>
+	<artifactId>tut-hiber-ogm</artifactId>
+	<version>0.1.0</version>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.hibernate.ogm</groupId>
-                <artifactId>hibernate-ogm-bom</artifactId>
-                <version>5.0.3.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.hibernate.ogm</groupId>
-            <artifactId>hibernate-ogm-infinispan</artifactId>
-        </dependency>
+	<build>
+		<plugins>
 
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-        </dependency>
-    </dependencies>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 
-    <repositories></repositories>
+		</plugins>
+	</build>
 
-    <pluginRepositories></pluginRepositories>
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.hibernate.ogm</groupId>
+				<artifactId>hibernate-ogm-bom</artifactId>
+				<version>5.0.3.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.narayana.jta</groupId>
+				<artifactId>narayana-jta</artifactId>
+				<version>5.4.0.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss</groupId>
+				<artifactId>jboss-transaction-spi</artifactId>
+				<version>7.5.0.Final</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-infinispan</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.spec.javax.transaction</groupId>
+			<artifactId>jboss-transaction-api_1.2_spec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.narayana.jta</groupId>
+			<artifactId>narayana-jta</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-transaction-spi</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-transaction-spi</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+	</dependencies>
 
 </project>
